@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 /* ============================================
    SectionHeading Component
    Reusable heading block for all page sections.
+   Light Industrial palette.
    ============================================ */
 
 type Alignment = "left" | "center";
@@ -16,7 +17,7 @@ interface SectionHeadingProps {
   description?: string;
   /** Text alignment */
   align?: Alignment;
-  /** Swap title color to gold accent */
+  /** Swap title color to brand red accent */
   accentTitle?: boolean;
   className?: string;
 }
@@ -38,8 +39,8 @@ export default function SectionHeading({
       )}
     >
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-gold">
-          <span className="block w-5 h-px bg-gold" aria-hidden="true" />
+        <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-brand-red">
+          <span className="block w-5 h-px bg-brand-red" aria-hidden="true" />
           {eyebrow}
         </span>
       )}
@@ -47,7 +48,7 @@ export default function SectionHeading({
       <h2
         className={cn(
           "font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight",
-          accentTitle ? "text-gold" : "text-off-white",
+          accentTitle ? "text-brand-red" : "text-foreground",
           align === "center" && "max-w-2xl"
         )}
       >
@@ -57,7 +58,7 @@ export default function SectionHeading({
       {description && (
         <p
           className={cn(
-            "text-gray-light text-base sm:text-lg leading-relaxed",
+            "text-muted-foreground text-base sm:text-lg leading-relaxed",
             align === "center" ? "max-w-xl" : "max-w-2xl"
           )}
         >

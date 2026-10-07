@@ -2,67 +2,68 @@
 
 /* ============================================
    PUREE — Design System
-   Color System, Typography, Base Styles
+   Light Industrial / Clean Corporate
    ============================================ */
 
 /* --- CSS Variables --- */
 :root {
-  /* Brand Colors */
-  --color-red: #C90000;
-  --color-gold: #FFC400;
+  /* Semantic tokens */
+  --background:       #F7F7F5;
+  --surface:          #FFFFFF;
+  --surface-muted:    #F0F0ED;
+  --foreground:       #1F1F1F;
+  --muted-foreground: #666666;
+  --border:           #E5E5E5;
+  --border-strong:    #D0D0CC;
 
-  /* Dark Scale */
-  --color-black: #0A0A0A;
-  --color-charcoal: #171717;
-
-  /* Light */
-  --color-off-white: #F5F2EA;
-
-  /* Neutral */
-  --color-gray: #737373;
-  --color-gray-light: #A3A3A3;
-  --color-gray-dark: #404040;
-
-  /* Semantic */
-  --background: var(--color-black);
-  --foreground: var(--color-off-white);
-  --surface: var(--color-charcoal);
-  --border: #262626;
-  --muted: var(--color-gray);
+  /* Brand */
+  --brand-red:        #C90000;
+  --brand-red-hover:  #A80000;
+  --brand-red-light:  #FFF0F0;
+  --brand-gold:       #E5A900;
+  --brand-gold-light: #FFF8E6;
 
   /* Typography */
-  --font-sans: var(--font-inter);
+  --font-sans:    var(--font-inter);
   --font-display: var(--font-barlow);
 }
 
 /* --- @theme for Tailwind v4 --- */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-surface: var(--surface);
-  --color-border: var(--border);
-  --color-muted: var(--muted);
+  /* Semantic */
+  --color-background:       var(--background);
+  --color-surface:          var(--surface);
+  --color-surface-muted:    var(--surface-muted);
+  --color-foreground:       var(--foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border:           var(--border);
+  --color-border-strong:    var(--border-strong);
 
   /* Brand */
-  --color-red: #C90000;
-  --color-red-hover: #A80000;
-  --color-gold: #FFC400;
-  --color-gold-muted: #CC9D00;
+  --color-brand-red:        var(--brand-red);
+  --color-brand-red-hover:  var(--brand-red-hover);
+  --color-brand-red-light:  var(--brand-red-light);
+  --color-brand-gold:       var(--brand-gold);
+  --color-brand-gold-light: var(--brand-gold-light);
 
-  /* Dark scale */
-  --color-black: #0A0A0A;
-  --color-charcoal: #171717;
+  /* Shorthand aliases (used throughout components) */
+  --color-red:              var(--brand-red);
+  --color-red-hover:        var(--brand-red-hover);
+  --color-gold:             var(--brand-gold);
 
-  /* Light */
-  --color-off-white: #F5F2EA;
-
-  /* Gray scale */
-  --color-gray: #737373;
-  --color-gray-light: #A3A3A3;
-  --color-gray-dark: #404040;
+  /* Neutral scale — still available for one-off use */
+  --color-neutral-100: #F7F7F5;
+  --color-neutral-200: #F0F0ED;
+  --color-neutral-300: #E5E5E5;
+  --color-neutral-400: #D0D0CC;
+  --color-neutral-500: #999999;
+  --color-neutral-600: #666666;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #2A2A2A;
+  --color-neutral-900: #1F1F1F;
 
   /* Font families */
-  --font-sans: var(--font-inter);
+  --font-sans:    var(--font-inter);
   --font-display: var(--font-barlow);
 }
 
@@ -95,38 +96,38 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-black);
+  background: var(--surface-muted);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-gray-dark);
+  background: var(--border-strong);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-gray);
+  background: var(--muted-foreground);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--color-gray-dark) var(--color-black);
+  scrollbar-color: var(--border-strong) var(--surface-muted);
 }
 
 /* --- Selection --- */
 ::selection {
-  background-color: var(--color-red);
-  color: var(--color-off-white);
+  background-color: var(--brand-red);
+  color: #ffffff;
 }
 
 ::-moz-selection {
-  background-color: var(--color-red);
-  color: var(--color-off-white);
+  background-color: var(--brand-red);
+  color: #ffffff;
 }
 
 /* --- Focus Ring --- */
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--brand-red);
   outline-offset: 2px;
 }
 
@@ -136,11 +137,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  color: var(--color-off-white);
+  color: var(--foreground);
 }
 
 p {
   line-height: 1.7;
+  color: var(--muted-foreground);
 }
 
 /* --- Utility: Container --- */
@@ -161,12 +163,12 @@ p {
   text-wrap: balance;
 }
 
-/* --- Gradient line accent --- */
+/* --- Accent line (brand red) --- */
 .accent-line {
   display: block;
   width: 3rem;
   height: 3px;
-  background-color: var(--color-red);
+  background-color: var(--brand-red);
 }
 
 /* --- Image: prevent drag --- */

@@ -55,7 +55,7 @@ export default function RootLayout({
       lang="id"
       className={`${inter.variable} ${barlow.variable}`}
     >
-      <body className="min-h-screen flex flex-col bg-black text-off-white antialiased overflow-x-hidden">
+      <body className="min-h-screen flex flex-col bg-background text-foreground antialiased overflow-x-hidden">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

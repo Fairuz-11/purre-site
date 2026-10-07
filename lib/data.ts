@@ -184,15 +184,41 @@ export const companyInfo: CompanyInfo = {
   name: "PUREE",
   tagline: "Building with Purpose.",
   description:
-    "PUREE adalah perusahaan kontraktor dan jasa konstruksi yang berkomitmen menghadirkan solusi bangunan berkualitas tinggi — dari konstruksi, renovasi, hingga desain arsitektur dan interior.",
+    "Solusi konstruksi, renovasi, arsitektur, dan interior untuk membangun ruang yang berkualitas.",
   founded: 2015,
-  address: "Jakarta, Indonesia",
-  phone: "+62 21 1234 5678",
-  email: "hello@puree.co.id",
-  whatsapp: "+62 812 3456 7890",
+  address: "Malang, Jawa Timur, Indonesia",
+  phone: "+62 812-0000-0000",
+  email: "info@puree.co.id",
+  whatsapp: "+62 812 0000 0000",
   socialMedia: {
     instagram: "https://instagram.com/puree.id",
     facebook: "https://facebook.com/puree.id",
     linkedin: "https://linkedin.com/company/puree-id",
   },
 };
+
+/* --- Footer service links --- */
+
+export interface FooterServiceItem {
+  label: string;
+  href: string;
+}
+
+export const footerServices: FooterServiceItem[] = [
+  { label: "Jasa Kontraktor Bangunan", href: "/layanan/kontraktor-bangunan" },
+  { label: "Jasa Renovasi Bangunan",   href: "/layanan/renovasi-bangunan"   },
+  { label: "Jasa Desain Arsitektur",   href: "/layanan/desain-arsitektur"   },
+  { label: "Jasa Desain Interior",     href: "/layanan/desain-interior"     },
+];
+
+/* --- Footer legal links --- */
+
+export interface FooterLegalItem {
+  label: string;
+  href: string;
+}
+
+export const footerLegal: FooterLegalItem[] = [
+  { label: "Privacy Policy",    href: "#" },
+  { label: "Terms & Conditions", href: "#" },
+];

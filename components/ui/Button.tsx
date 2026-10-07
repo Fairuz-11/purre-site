@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 /* ============================================
    Button Component
    Variants: primary | secondary | outline | ghost
+   Light Industrial palette.
    ============================================ */
 
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
@@ -17,14 +18,18 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
+  /** Red fill — main CTA */
   primary:
-    "bg-red text-off-white hover:bg-red-hover active:scale-[0.98] shadow-sm",
+    "bg-brand-red text-white hover:bg-brand-red-hover active:scale-[0.98]",
+  /** White surface with dark border — secondary action */
   secondary:
-    "bg-surface text-off-white border border-border hover:border-gray hover:bg-charcoal active:scale-[0.98]",
+    "bg-surface text-foreground border border-border hover:border-brand-red hover:text-brand-red active:scale-[0.98]",
+  /** Transparent with dark border — tertiary / on-surface */
   outline:
-    "bg-transparent text-off-white border border-off-white/30 hover:border-off-white hover:bg-off-white/5 active:scale-[0.98]",
+    "bg-transparent text-foreground border border-border-strong hover:border-brand-red hover:text-brand-red active:scale-[0.98]",
+  /** No border, subtle hover */
   ghost:
-    "bg-transparent text-gray-light hover:text-off-white hover:bg-white/5 active:scale-[0.98]",
+    "bg-transparent text-muted-foreground hover:text-foreground hover:bg-surface-muted active:scale-[0.98]",
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
@@ -49,7 +54,7 @@ export default function Button({
         "font-medium tracking-wide rounded-none",
         "transition-all duration-200 ease-out",
         "cursor-pointer select-none",
-        "focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2",
+        "focus-visible:outline-2 focus-visible:outline-brand-red focus-visible:outline-offset-2",
         "disabled:opacity-40 disabled:cursor-not-allowed disabled:active:scale-100",
         // Variant
         variantClasses[variant],
@@ -91,7 +96,7 @@ export function ButtonLink({
         "font-medium tracking-wide rounded-none",
         "transition-all duration-200 ease-out",
         "cursor-pointer select-none no-underline",
-        "focus-visible:outline-2 focus-visible:outline-gold focus-visible:outline-offset-2",
+        "focus-visible:outline-2 focus-visible:outline-brand-red focus-visible:outline-offset-2",
         variantClasses[variant],
         sizeClasses[size],
         fullWidth && "w-full",
