@@ -33,6 +33,18 @@ export interface Project {
   featured: boolean;
 }
 
+export interface FeaturedProject {
+  id: string;
+  title: string;
+  slug: string;
+  category: string;
+  location: string;
+  /** /images/projects/... */
+  image: string;
+  /** "large" = hero card, "small" = side card */
+  size: "large" | "small";
+}
+
 export interface CompanyInfo {
   name: string;
   tagline: string;
@@ -197,7 +209,82 @@ export const companyInfo: CompanyInfo = {
   },
 };
 
-/* --- Footer service links --- */
+/* --- Homepage service preview (shorter copy for cards) --- */
+
+export interface ServicePreview {
+  id: string;
+  number: string;
+  title: string;
+  slug: string;
+  description: string;
+}
+
+export const servicesPreviews: ServicePreview[] = [
+  {
+    id: "kontraktor-bangunan",
+    number: "01",
+    title: "Jasa Kontraktor Bangunan",
+    slug: "kontraktor-bangunan",
+    description:
+      "Pembangunan dengan proses kerja yang terencana dan standar kualitas yang terjaga.",
+  },
+  {
+    id: "renovasi-bangunan",
+    number: "02",
+    title: "Jasa Renovasi Bangunan",
+    slug: "renovasi-bangunan",
+    description:
+      "Mengubah dan meningkatkan fungsi ruang tanpa mengabaikan karakter desain.",
+  },
+  {
+    id: "desain-arsitektur",
+    number: "03",
+    title: "Jasa Desain Arsitektur",
+    slug: "desain-arsitektur",
+    description:
+      "Perencanaan arsitektur yang menggabungkan fungsi, estetika, dan kebutuhan pengguna.",
+  },
+  {
+    id: "desain-interior",
+    number: "04",
+    title: "Jasa Desain Interior",
+    slug: "desain-interior",
+    description:
+      "Interior yang dirancang untuk menciptakan ruang yang nyaman, fungsional, dan berkarakter.",
+  },
+];
+
+/* --- Featured projects for homepage --- */
+
+export const featuredProjects: FeaturedProject[] = [
+  {
+    id: "fp-01",
+    title: "Modern Residence",
+    slug: "modern-residence",
+    category: "Residensial",
+    location: "Malang",
+    image: "/images/projects/project-01.jpg",
+    size: "large",
+  },
+  {
+    id: "fp-02",
+    title: "Commercial Space",
+    slug: "commercial-space",
+    category: "Komersial",
+    location: "Malang",
+    image: "/images/projects/project-02.jpg",
+    size: "small",
+  },
+  {
+    id: "fp-03",
+    title: "Contemporary Interior",
+    slug: "contemporary-interior",
+    category: "Interior",
+    location: "Malang",
+    image: "/images/projects/project-03.jpg",
+    size: "small",
+  },
+];
 
 export interface FooterServiceItem {
   label: string;

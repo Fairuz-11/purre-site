@@ -19,6 +19,8 @@ interface SectionHeadingProps {
   align?: Alignment;
   /** Swap title color to brand red accent */
   accentTitle?: boolean;
+  /** id passed to the <h2> for aria-labelledby on parent <section> */
+  id?: string;
   className?: string;
 }
 
@@ -28,6 +30,7 @@ export default function SectionHeading({
   description,
   align = "left",
   accentTitle = false,
+  id,
   className,
 }: SectionHeadingProps) {
   return (
@@ -46,6 +49,7 @@ export default function SectionHeading({
       )}
 
       <h2
+        id={id}
         className={cn(
           "font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight tracking-tight",
           accentTitle ? "text-brand-red" : "text-foreground",
