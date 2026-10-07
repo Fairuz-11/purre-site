@@ -418,3 +418,161 @@ export const processSteps: ProcessStep[] = [
       "Menyelesaikan proyek dengan komunikasi dan evaluasi yang terarah.",
   },
 ];
+
+/* ============================================
+   Portfolio — full project data
+   Used by /portofolio and /portofolio/[slug]
+   ============================================ */
+
+export type PortfolioCategory =
+  | "Residential"
+  | "Commercial"
+  | "Interior"
+  | "Renovation";
+
+export interface PortfolioProject {
+  id: string;
+  slug: string;
+  title: string;
+  category: PortfolioCategory;
+  location: string;
+  year: string;
+  /** Short caption used in grid cards */
+  shortDescription: string;
+  /** Longer copy for detail page overview */
+  description: string;
+  /** Primary image — grid card + hero */
+  image: string;
+  /** Gallery images (including primary) */
+  gallery: string[];
+  /** Service titles involved */
+  services: string[];
+}
+
+export const portfolioProjects: PortfolioProject[] = [
+  {
+    id: "pp-01",
+    slug: "modern-residence",
+    title: "Modern Residence",
+    category: "Residential",
+    location: "Malang",
+    year: "2026",
+    shortDescription:
+      "Hunian modern dengan pendekatan arsitektur yang bersih dan fungsional.",
+    description:
+      "Project ini merepresentasikan pendekatan desain dan pembangunan yang menempatkan kebutuhan pengguna, fungsi ruang, serta kualitas detail sebagai bagian penting dari proses.",
+    image: "/images/projects/project-01.jpg",
+    gallery: [
+      "/images/projects/project-01.jpg",
+      "/images/projects/project-01-02.jpg",
+      "/images/projects/project-01-03.jpg",
+    ],
+    services: ["Jasa Kontraktor Bangunan", "Jasa Desain Arsitektur"],
+  },
+  {
+    id: "pp-02",
+    slug: "contemporary-house",
+    title: "Contemporary House",
+    category: "Residential",
+    location: "Malang",
+    year: "2025",
+    shortDescription:
+      "Rumah tinggal dengan karakter kontemporer dan material pilihan.",
+    description:
+      "Project ini merepresentasikan pendekatan desain dan pembangunan yang menempatkan kebutuhan pengguna, fungsi ruang, serta kualitas detail sebagai bagian penting dari proses.",
+    image: "/images/projects/project-02.jpg",
+    gallery: [
+      "/images/projects/project-02.jpg",
+      "/images/projects/project-02-02.jpg",
+      "/images/projects/project-02-03.jpg",
+    ],
+    services: ["Jasa Kontraktor Bangunan", "Jasa Desain Arsitektur"],
+  },
+  {
+    id: "pp-03",
+    slug: "commercial-space",
+    title: "Commercial Space",
+    category: "Commercial",
+    location: "Malang",
+    year: "2025",
+    shortDescription:
+      "Ruang komersial yang dirancang untuk mendukung produktivitas dan citra brand.",
+    description:
+      "Project ini merepresentasikan pendekatan desain dan pembangunan yang menempatkan kebutuhan pengguna, fungsi ruang, serta kualitas detail sebagai bagian penting dari proses.",
+    image: "/images/projects/project-03.jpg",
+    gallery: [
+      "/images/projects/project-03.jpg",
+      "/images/projects/project-03-02.jpg",
+      "/images/projects/project-03-03.jpg",
+    ],
+    services: ["Jasa Kontraktor Bangunan", "Jasa Desain Interior"],
+  },
+  {
+    id: "pp-04",
+    slug: "modern-office",
+    title: "Modern Office",
+    category: "Commercial",
+    location: "Malang",
+    year: "2024",
+    shortDescription:
+      "Kantor modern dengan tata ruang yang efisien dan suasana kerja yang mendukung.",
+    description:
+      "Project ini merepresentasikan pendekatan desain dan pembangunan yang menempatkan kebutuhan pengguna, fungsi ruang, serta kualitas detail sebagai bagian penting dari proses.",
+    image: "/images/projects/project-04.jpg",
+    gallery: [
+      "/images/projects/project-04.jpg",
+      "/images/projects/project-04-02.jpg",
+      "/images/projects/project-04-03.jpg",
+    ],
+    services: ["Jasa Desain Arsitektur", "Jasa Desain Interior"],
+  },
+  {
+    id: "pp-05",
+    slug: "minimalist-interior",
+    title: "Minimalist Interior",
+    category: "Interior",
+    location: "Malang",
+    year: "2024",
+    shortDescription:
+      "Interior minimalis yang mengutamakan kenyamanan, fungsi, dan detail material.",
+    description:
+      "Project ini merepresentasikan pendekatan desain dan pembangunan yang menempatkan kebutuhan pengguna, fungsi ruang, serta kualitas detail sebagai bagian penting dari proses.",
+    image: "/images/projects/project-05.jpg",
+    gallery: [
+      "/images/projects/project-05.jpg",
+      "/images/projects/project-05-02.jpg",
+      "/images/projects/project-05-03.jpg",
+    ],
+    services: ["Jasa Desain Interior"],
+  },
+  {
+    id: "pp-06",
+    slug: "renovation-project",
+    title: "Renovation Project",
+    category: "Renovation",
+    location: "Malang",
+    year: "2023",
+    shortDescription:
+      "Renovasi bangunan yang memperbarui fungsi dan tampilan dengan pendekatan yang terstruktur.",
+    description:
+      "Project ini merepresentasikan pendekatan desain dan pembangunan yang menempatkan kebutuhan pengguna, fungsi ruang, serta kualitas detail sebagai bagian penting dari proses.",
+    image: "/images/projects/project-06.jpg",
+    gallery: [
+      "/images/projects/project-06.jpg",
+      "/images/projects/project-06-02.jpg",
+      "/images/projects/project-06-03.jpg",
+    ],
+    services: ["Jasa Renovasi Bangunan", "Jasa Desain Interior"],
+  },
+];
+
+export const portfolioCategories: Array<{
+  value: PortfolioCategory | "All";
+  label: string;
+}> = [
+  { value: "All", label: "All" },
+  { value: "Residential", label: "Residential" },
+  { value: "Commercial", label: "Commercial" },
+  { value: "Interior", label: "Interior" },
+  { value: "Renovation", label: "Renovation" },
+];
