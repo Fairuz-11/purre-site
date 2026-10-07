@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   },
   cacheComponents: true,
   partialPrefetching: true,
+  images: {
+    // Required in Next.js 16 — restrict allowed quality values
+    qualities: [50, 75, 90, 100],
+  },
   turbopack: {
     rules: {
       "*.css": {

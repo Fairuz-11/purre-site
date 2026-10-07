@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="72" viewBox="0 0 200 72">
+  <rect width="200" height="72" fill="#171717"/>
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="system-ui, sans-serif"
+    font-size="28"
+    font-weight="900"
+    letter-spacing="6"
+    fill="#F5F2EA"
+  >PUREE</text>
+  <rect x="0" y="0" width="4" height="72" fill="#C90000"/>
+</svg>
