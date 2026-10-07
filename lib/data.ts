@@ -10,14 +10,28 @@ export interface NavItem {
   href: string;
 }
 
+export interface ServiceWorkStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
 export interface Service {
   id: string;
+  /** Display number e.g. "01" */
+  number: string;
   title: string;
   slug: string;
+  /** Short one-liner for cards and listings */
+  shortDescription: string;
+  /** Longer body copy for detail page */
   description: string;
-  /** Lucide icon name, e.g. "building-2" */
+  /** Lucide icon name */
   icon: string;
+  /** Scope-of-service items */
   features: string[];
+  /** Hero image path for detail page */
+  image: string;
 }
 
 export interface Project {
@@ -81,59 +95,104 @@ export const ctaNavigation: NavItem = {
 export const services: Service[] = [
   {
     id: "kontraktor-bangunan",
+    number: "01",
     title: "Jasa Kontraktor Bangunan",
     slug: "kontraktor-bangunan",
+    shortDescription:
+      "Solusi pembangunan yang terencana dengan perhatian terhadap kualitas, fungsi, dan detail pengerjaan.",
     description:
-      "Pembangunan gedung, hunian, dan fasilitas komersial dengan standar konstruksi tinggi dan material berkualitas.",
+      "PUREE membantu mewujudkan kebutuhan pembangunan melalui proses kerja yang terstruktur, mulai dari persiapan hingga tahap penyelesaian.",
     icon: "building-2",
+    image: "/images/services/kontraktor-bangunan.jpg",
     features: [
-      "Perencanaan struktur",
-      "Pengawasan lapangan",
-      "Manajemen proyek",
-      "Garansi konstruksi",
+      "Perencanaan pekerjaan",
+      "Pelaksanaan konstruksi",
+      "Pengawasan kualitas",
+      "Koordinasi pengerjaan",
+      "Penyelesaian dan finishing",
     ],
   },
   {
     id: "renovasi-bangunan",
+    number: "02",
     title: "Jasa Renovasi Bangunan",
     slug: "renovasi-bangunan",
+    shortDescription:
+      "Memberikan wajah baru pada bangunan dengan mempertimbangkan fungsi, kebutuhan, dan karakter ruang.",
     description:
-      "Transformasi ruang eksisting menjadi lebih fungsional, estetis, dan bernilai tinggi sesuai kebutuhan Anda.",
+      "PUREE menangani kebutuhan renovasi dengan pendekatan yang mempertimbangkan kondisi bangunan, kebutuhan pengguna, serta tujuan desain.",
     icon: "hammer",
+    image: "/images/services/renovasi-bangunan.jpg",
     features: [
-      "Analisa kondisi eksisting",
-      "Desain renovasi",
-      "Eksekusi renovasi",
-      "Finishing premium",
+      "Renovasi ruang",
+      "Perubahan layout",
+      "Perbaikan bangunan",
+      "Upgrade finishing",
+      "Optimalisasi fungsi ruang",
     ],
   },
   {
     id: "desain-arsitektur",
+    number: "03",
     title: "Jasa Desain Arsitektur",
     slug: "desain-arsitektur",
+    shortDescription:
+      "Perencanaan arsitektur yang menggabungkan fungsi, estetika, dan karakter setiap kebutuhan proyek.",
     description:
-      "Perancangan arsitektur yang menggabungkan fungsi optimal, estetika kontemporer, dan efisiensi biaya.",
+      "PUREE membantu menerjemahkan kebutuhan dan ide menjadi konsep arsitektur yang terarah, fungsional, dan memiliki karakter.",
     icon: "drafting-compass",
+    image: "/images/services/desain-arsitektur.jpg",
     features: [
+      "Konsultasi konsep",
+      "Site planning",
       "Konsep desain",
-      "Gambar kerja lengkap",
-      "IMB & perizinan",
-      "Visualisasi 3D",
+      "Pengembangan desain",
+      "Dokumentasi desain",
     ],
   },
   {
     id: "desain-interior",
+    number: "04",
     title: "Jasa Desain Interior",
     slug: "desain-interior",
+    shortDescription:
+      "Menciptakan ruang interior yang nyaman, fungsional, dan memiliki karakter visual yang kuat.",
     description:
-      "Perancangan interior yang mencerminkan karakter penghuni dengan pemilihan material dan furnitur yang tepat.",
+      "PUREE menghadirkan pendekatan interior yang mempertimbangkan fungsi ruang, kebutuhan pengguna, material, dan suasana yang ingin dibangun.",
     icon: "sofa",
+    image: "/images/services/desain-interior.jpg",
     features: [
       "Konsep interior",
+      "Space planning",
       "Pemilihan material",
-      "Tata cahaya",
-      "Furnitur custom",
+      "Furniture planning",
+      "Detail interior",
     ],
+  },
+];
+
+/* --- Generic service work steps (shared across all service detail pages) --- */
+
+export const serviceWorkSteps: ServiceWorkStep[] = [
+  {
+    number: "01",
+    title: "Consultation",
+    description: "Memahami kebutuhan dan tujuan proyek.",
+  },
+  {
+    number: "02",
+    title: "Planning",
+    description: "Menyusun konsep dan rencana pengerjaan.",
+  },
+  {
+    number: "03",
+    title: "Execution",
+    description: "Melaksanakan pekerjaan sesuai rencana.",
+  },
+  {
+    number: "04",
+    title: "Completion",
+    description: "Melakukan final checking dan penyelesaian.",
   },
 ];
 
@@ -219,40 +278,13 @@ export interface ServicePreview {
   description: string;
 }
 
-export const servicesPreviews: ServicePreview[] = [
-  {
-    id: "kontraktor-bangunan",
-    number: "01",
-    title: "Jasa Kontraktor Bangunan",
-    slug: "kontraktor-bangunan",
-    description:
-      "Pembangunan dengan proses kerja yang terencana dan standar kualitas yang terjaga.",
-  },
-  {
-    id: "renovasi-bangunan",
-    number: "02",
-    title: "Jasa Renovasi Bangunan",
-    slug: "renovasi-bangunan",
-    description:
-      "Mengubah dan meningkatkan fungsi ruang tanpa mengabaikan karakter desain.",
-  },
-  {
-    id: "desain-arsitektur",
-    number: "03",
-    title: "Jasa Desain Arsitektur",
-    slug: "desain-arsitektur",
-    description:
-      "Perencanaan arsitektur yang menggabungkan fungsi, estetika, dan kebutuhan pengguna.",
-  },
-  {
-    id: "desain-interior",
-    number: "04",
-    title: "Jasa Desain Interior",
-    slug: "desain-interior",
-    description:
-      "Interior yang dirancang untuk menciptakan ruang yang nyaman, fungsional, dan berkarakter.",
-  },
-];
+export const servicesPreviews: ServicePreview[] = services.map((s, i) => ({
+  id: s.id,
+  number: s.number,
+  title: s.title,
+  slug: s.slug,
+  description: s.shortDescription,
+}));
 
 /* --- Featured projects for homepage --- */
 
