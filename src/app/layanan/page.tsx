@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main>
+    <>
       <ServicesHero />
       <ServicesList />
       <ServicesCTA />
-    </main>
+    </>
   );
 }

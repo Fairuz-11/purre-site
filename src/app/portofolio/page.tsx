@@ -15,10 +15,10 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return (
-    <main>
+    <>
       <PortfolioHero />
       <ProjectGrid />
       <PortfolioCTA />
-    </main>
+    </>
   );
 }

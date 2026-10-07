@@ -20,22 +20,11 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero */}
       <Hero />
-
-      {/* 2. About Preview */}
       <AboutPreview />
-
-      {/* 3. Services */}
       <ServicesPreview />
-
-      {/* 4. Why PUREE */}
       <WhyPuree />
-
-      {/* 5. Featured Projects */}
       <FeaturedProjects />
-
-      {/* 6. Final CTA */}
       <FinalCTA />
     </>
   );

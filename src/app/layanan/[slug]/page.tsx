@@ -48,8 +48,7 @@ export default async function ServiceDetailPage(
   }
 
   return (
-    <main>
-      {/* Breadcrumb */}
+    <>
       <Breadcrumb
         items={[
           { label: "Beranda", href: "/" },
@@ -57,24 +56,12 @@ export default async function ServiceDetailPage(
           { label: service.title },
         ]}
       />
-
-      {/* 1. Hero */}
       <ServiceDetailHero service={service} />
-
-      {/* 2. Overview */}
       <ServiceOverview service={service} />
-
-      {/* 3. Features / Scope */}
       <ServiceFeatures service={service} />
-
-      {/* 4. Process */}
       <ServiceProcess />
-
-      {/* 5. Related services */}
       <RelatedServices currentSlug={service.slug} />
-
-      {/* 6. CTA */}
       <ServiceDetailCTA />
-    </main>
+    </>
   );
 }

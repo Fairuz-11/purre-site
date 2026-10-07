@@ -104,24 +104,27 @@ export default function Hero() {
               </Link>
             </motion.div>
 
-            {/* Stats strip */}
+            {/* Services strip */}
             <motion.div
               {...fadeUp(0.42)}
-              className="flex items-center gap-8 mt-14 pt-8 border-t border-border"
+              className="flex flex-wrap items-center gap-x-6 gap-y-2 mt-14 pt-8 border-t border-border"
             >
               {[
-                { value: "10+", label: "Tahun Berpengalaman" },
-                { value: "100+", label: "Proyek Selesai" },
-                { value: "4", label: "Layanan Utama" },
-              ].map((stat) => (
-                <div key={stat.label} className="flex flex-col gap-0.5">
-                  <span className="font-display text-2xl font-extrabold text-foreground leading-none">
-                    {stat.value}
-                  </span>
-                  <span className="text-xs text-muted-foreground">
-                    {stat.label}
-                  </span>
-                </div>
+                "Kontraktor Bangunan",
+                "Renovasi",
+                "Desain Arsitektur",
+                "Desain Interior",
+              ].map((label) => (
+                <span
+                  key={label}
+                  className="flex items-center gap-2 text-xs text-muted-foreground"
+                >
+                  <span
+                    className="w-1 h-1 rounded-full bg-brand-red flex-shrink-0"
+                    aria-hidden="true"
+                  />
+                  {label}
+                </span>
               ))}
             </motion.div>
           </div>

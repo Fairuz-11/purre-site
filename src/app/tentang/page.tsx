@@ -19,24 +19,13 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main>
-      {/* 1. Hero */}
+    <>
       <AboutHero />
-
-      {/* 2. Company Introduction */}
       <CompanyIntro />
-
-      {/* 3. Vision & Mission */}
       <VisionMission />
-
-      {/* 4. Core Values */}
       <CoreValues />
-
-      {/* 5. Approach / Process */}
       <Approach />
-
-      {/* 6. Closing CTA */}
       <AboutCTA />
-    </main>
+    </>
   );
 }

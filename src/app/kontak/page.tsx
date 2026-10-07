@@ -18,21 +18,12 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main>
-      {/* 1. Hero */}
+    <>
       <ContactHero />
-
-      {/* 2. Contact Information */}
       <ContactInfo />
-
-      {/* 3. Consultation Form */}
       <ConsultationSection />
-
-      {/* 4. Location */}
       <LocationSection />
-
-      {/* 5. Final CTA */}
       <ContactCTA />
-    </main>
+    </>
   );
 }

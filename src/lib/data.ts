@@ -278,7 +278,7 @@ export interface ServicePreview {
   description: string;
 }
 
-export const servicesPreviews: ServicePreview[] = services.map((s, i) => ({
+export const servicesPreviews: ServicePreview[] = services.map((s) => ({
   id: s.id,
   number: s.number,
   title: s.title,

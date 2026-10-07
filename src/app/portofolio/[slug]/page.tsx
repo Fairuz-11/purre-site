@@ -47,8 +47,7 @@ export default async function PortfolioDetailPage(
   }
 
   return (
-    <main>
-      {/* Breadcrumb */}
+    <>
       <Breadcrumb
         items={[
           { label: "Beranda", href: "/" },
@@ -56,21 +55,11 @@ export default async function PortfolioDetailPage(
           { label: project.title },
         ]}
       />
-
-      {/* 1. Hero — title + meta + large image */}
       <ProjectDetailHero project={project} />
-
-      {/* 2. Overview — description + detail sidebar */}
       <ProjectOverview project={project} />
-
-      {/* 3. Gallery — editorial grid + lightbox */}
       <ProjectGallery project={project} />
-
-      {/* 4. Related projects */}
       <RelatedProjects currentSlug={project.slug} />
-
-      {/* 5. Closing CTA */}
       <PortfolioCTA />
-    </main>
+    </>
   );
 }
