@@ -309,3 +309,80 @@ export const footerLegal: FooterLegalItem[] = [
   { label: "Privacy Policy",    href: "#" },
   { label: "Terms & Conditions", href: "#" },
 ];
+
+/* --- About page data --- */
+
+export const companyVision =
+  "Menjadi partner terpercaya dalam menghadirkan solusi konstruksi dan desain yang berkualitas, fungsional, dan memiliki nilai jangka panjang.";
+
+export const companyMission: string[] = [
+  "Mengutamakan kualitas dalam setiap proses pekerjaan.",
+  "Menghadirkan solusi yang sesuai dengan kebutuhan dan karakter setiap proyek.",
+  "Menjalankan proses kerja yang profesional, terstruktur, dan transparan.",
+  "Membangun hubungan jangka panjang melalui komunikasi dan kepercayaan.",
+];
+
+export interface CoreValue {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export const coreValues: CoreValue[] = [
+  {
+    number: "01",
+    title: "Quality",
+    description:
+      "Memberikan perhatian terhadap kualitas dari proses hingga hasil akhir.",
+  },
+  {
+    number: "02",
+    title: "Integrity",
+    description:
+      "Menjalankan pekerjaan dengan tanggung jawab, keterbukaan, dan kejujuran.",
+  },
+  {
+    number: "03",
+    title: "Precision",
+    description:
+      "Memperhatikan detail untuk menghasilkan pekerjaan yang terukur dan konsisten.",
+  },
+  {
+    number: "04",
+    title: "Collaboration",
+    description:
+      "Membangun komunikasi dan kolaborasi yang baik dengan klien dan seluruh pihak yang terlibat.",
+  },
+];
+
+export interface ProcessStep {
+  number: string;
+  title: string;
+  description: string;
+}
+
+export const processSteps: ProcessStep[] = [
+  {
+    number: "01",
+    title: "Understand",
+    description: "Memahami kebutuhan, tujuan, dan karakter proyek.",
+  },
+  {
+    number: "02",
+    title: "Plan",
+    description:
+      "Menyusun konsep, perencanaan, dan strategi pengerjaan.",
+  },
+  {
+    number: "03",
+    title: "Build",
+    description:
+      "Melaksanakan pekerjaan dengan perhatian terhadap kualitas dan detail.",
+  },
+  {
+    number: "04",
+    title: "Deliver",
+    description:
+      "Menyelesaikan proyek dengan komunikasi dan evaluasi yang terarah.",
+  },
+];
