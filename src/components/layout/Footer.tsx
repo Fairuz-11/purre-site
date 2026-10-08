@@ -44,11 +44,12 @@ export default function Footer() {
               {/* White background pill so logo is readable on dark bg */}
               <span className="flex items-center bg-white px-4 py-2.5 rounded-sm">
                 <Image
-                  src="/logo/puree-logo.png"
+                  src="/logo/puree-logo-placeholder.svg"
                   alt="PUREE"
                   width={100}
                   height={36}
                   className="h-7 w-auto object-contain"
+                  unoptimized
                 />
               </span>
             </Link>

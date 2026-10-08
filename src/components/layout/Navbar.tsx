@@ -76,11 +76,12 @@ export default function Navbar() {
               className="flex-shrink-0 flex items-center focus-visible:outline-2 focus-visible:outline-brand-red focus-visible:outline-offset-4 rounded-sm"
             >
               <Image
-                src="/logo/puree-logo.png"
+                src="/logo/puree-logo-placeholder.svg"
                 alt="PUREE"
                 width={108}
                 height={40}
                 className="h-9 w-auto object-contain"
+                unoptimized
               />
             </Link>
 
