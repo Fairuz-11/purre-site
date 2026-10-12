@@ -1,0 +1,42 @@
+graph TD
+    subgraph Routing ["Next.js 16 App Router"]
+        RootLayout["Root Layout (layout.tsx)<br/>Navbar + Footer + Fonts"]
+        Home["/ (Home)<br/>Hero, AboutPreview, ServicesPreview,<br/>WhyPuree, FeaturedProjects, FinalCTA"]
+        About["/tentang (About)<br/>Intro, Vision, Values, Approach"]
+        Services["/layanan (Services)<br/>ServicesList, CTA"]
+        ServiceDetail["/layanan/[slug]<br/>Detail Hero, Features, Process, Related"]
+        Portfolio["/portofolio (Portfolio)<br/>ProjectGrid (Filterable)"]
+        PortfolioDetail["/portofolio/[slug]<br/>Detail Hero, Overview, Gallery, Related"]
+        Contact["/kontak (Contact)<br/>ContactInfo, ConsultationForm, Location"]
+        NotFound["404 (not-found.tsx)"]
+    end
+
+    subgraph DataLayer ["Data Layer (src/lib/data.ts)"]
+        ServicesData[("services (4)")]
+        PortfolioData[("portfolioProjects (6)")]
+        CompanyData[("companyInfo, vision, values")]
+        NavData[("navigation, ctaNavigation")]
+    end
+
+    RootLayout --> Home
+    RootLayout --> About
+    RootLayout --> Services
+    RootLayout --> ServiceDetail
+    RootLayout --> Portfolio
+    RootLayout --> PortfolioDetail
+    RootLayout --> Contact
+    RootLayout --> NotFound
+
+    ServicesData --> Services
+    ServicesData --> ServiceDetail
+    ServicesData --> Home
+
+    PortfolioData --> Portfolio
+    PortfolioData --> PortfolioDetail
+    PortfolioData --> Home
+
+    CompanyData --> About
+    CompanyData --> Contact
+    CompanyData --> RootLayout
+
+    NavData --> RootLayout
